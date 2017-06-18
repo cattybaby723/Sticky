@@ -17,6 +17,9 @@
 package com.example.anrou_hu.sticky;
 
 
+import com.example.anrou_hu.sticky.presenters.IPresenter;
+import com.example.anrou_hu.sticky.views.IView;
+
 /**
  * This specifies the contract between the view and the presenter.
  */

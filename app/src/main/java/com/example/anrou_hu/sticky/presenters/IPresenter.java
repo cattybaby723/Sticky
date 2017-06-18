@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.anrou_hu.sticky;
+package com.example.anrou_hu.sticky.presenters;
 
-public interface IView<T> {
+public interface IPresenter {
 
-    void setPresenter(T presenter);
+    void start();
 
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tool_bar_size">60dp</dimen>
+
+
+    <dimen name="default_dimens">5dp</dimen>
+    <dimen name="double_dimens">10dp</dimen>
+    <dimen name="triple_dimens">15dp</dimen>
+    <dimen name="quad_dimens">20dp</dimen>
+
+
+</resources>
