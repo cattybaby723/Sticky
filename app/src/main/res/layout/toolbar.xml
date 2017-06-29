@@ -12,12 +12,12 @@
 
     <ImageButton
         android:id="@+id/backBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/default_icon_size"
+        android:layout_height="@dimen/default_icon_size"
         android:layout_marginEnd="@dimen/triple_dimens"
         android:background="@drawable/touch_effect_btn"
         android:layout_gravity="start"
-        android:src="@drawable/ic_arrow_back_white"
+        android:src="@drawable/ic_arrow_back"
         android:visibility="invisible"
         />
 
@@ -34,21 +34,21 @@
 
     <ImageButton
         android:id="@+id/settingBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/default_icon_size"
+        android:layout_height="@dimen/default_icon_size"
         android:layout_marginEnd="@dimen/triple_dimens"
         android:background="@drawable/touch_effect_btn"
         android:layout_gravity="end"
-        android:src="@drawable/ic_more_vert_white"/>
+        android:src="@drawable/ic_more"/>
 
 
     <ImageButton
         android:id="@+id/addBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="@dimen/default_icon_size"
+        android:layout_height="@dimen/default_icon_size"
         android:layout_marginEnd="@dimen/default_dimens"
         android:background="@drawable/touch_effect_btn"
-        android:src="@drawable/ic_add_white"
+        android:src="@drawable/ic_add"
         android:layout_gravity="end"/>
 
 
