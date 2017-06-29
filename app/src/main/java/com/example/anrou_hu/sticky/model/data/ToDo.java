@@ -1,13 +1,14 @@
 package com.example.anrou_hu.sticky.model.data;
 
 
-import com.example.anrou_hu.sticky.model.data_type.NoteType;
+import com.example.anrou_hu.sticky.model.data_type.StickyType;
 
 /**
  * @author anrou_hu
  */
 
-public class ToDo extends BaseRecord {
+public class ToDo extends Sticky {
 
-    NoteType mType = NoteType.TO_DO;
+    private StickyType mType = StickyType.TO_DO;
+
 }

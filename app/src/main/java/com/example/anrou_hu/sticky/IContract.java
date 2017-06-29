@@ -17,19 +17,19 @@
 package com.example.anrou_hu.sticky;
 
 
-import com.example.anrou_hu.sticky.presenters.IPresenter;
-import com.example.anrou_hu.sticky.views.IView;
+import com.example.anrou_hu.sticky.presenters.BasePresenter;
+import com.example.anrou_hu.sticky.views.BaseView;
 
 /**
  * This specifies the contract between the view and the presenter.
  */
 public interface IContract {
 
-    interface View extends IView<Presenter> {
+    interface View extends BaseView<Presenter> {
 
     }
 
-    interface Presenter extends IPresenter {
+    interface Presenter extends BasePresenter {
 
 
     }
