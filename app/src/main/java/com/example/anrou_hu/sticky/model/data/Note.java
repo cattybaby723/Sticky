@@ -9,5 +9,7 @@ import com.example.anrou_hu.sticky.model.data_type.StickyType;
 
 public class Note extends Sticky {
 
-    private StickyType mType = StickyType.NOTE;
+    public Note() {
+        mType =  StickyType.NOTE;
+    }
 }

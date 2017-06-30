@@ -9,6 +9,7 @@ import com.example.anrou_hu.sticky.model.data_type.StickyType;
 
 public class ToDo extends Sticky {
 
-    private StickyType mType = StickyType.TO_DO;
-
+    public ToDo() {
+        mType = StickyType.TO_DO;
+    }
 }

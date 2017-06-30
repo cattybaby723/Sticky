@@ -7,57 +7,63 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.anrou_hu.sticky.R;
-import com.example.anrou_hu.sticky.model.data.Note;
+import com.example.anrou_hu.sticky.model.data.ToDo;
 
 /**
  * @author anrou_hu
  */
 
-public class NoteViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class ToDoViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    private IClickCallBack mIClickCallBack;
+    private IClickCallBack mClickCallBack;
 
     private ViewGroup mContainer;
     private ImageButton mCheckBox;
+    private ImageButton mExpandBtn;
     private TextView mTitle;
 
 
-    public NoteViewHolder(View itemView, IClickCallBack iClickCallBack) {
+    public ToDoViewHolder(View itemView, IClickCallBack clickCallBack) {
         super(itemView);
 
-        mIClickCallBack = iClickCallBack;
-        initView(itemView);
+        mClickCallBack = clickCallBack;
+        initViews(itemView);
     }
 
-
-    private void initView(View itemView) {
+    private void initViews(View itemView) {
         mContainer = (ViewGroup) itemView.findViewById(R.id.container);
-        mCheckBox = (ImageButton) itemView.findViewById(R.id.checkbox);
+        mCheckBox = (ImageButton) itemView.findViewById(R.id.checkBox);
+        mExpandBtn = (ImageButton) itemView.findViewById(R.id.expandBtn);
         mTitle = (TextView) itemView.findViewById(R.id.title);
 
         mContainer.setOnClickListener(this);
         mCheckBox.setOnClickListener(this);
+        mExpandBtn.setOnClickListener(this);
     }
 
-    public void bindViews(Note note) {
-        mTitle.setText(note.getTitle());
+    public void bindViews(ToDo toDo) {
+        mTitle.setText(toDo.getTitle());
     }
+
 
     @Override
     public void onClick(View v) {
         int position = getAdapterPosition();
         switch (v.getId()) {
             case R.id.container:
-                mIClickCallBack.onNotifyItemClick(R.id.container, position);
+                mClickCallBack.onNotifyItemClick(R.id.container, position);
                 break;
 
-            case R.id.checkbox:
+            case R.id.checkBox:
                 toggleCheckBtn();
-                mIClickCallBack.onNotifyItemClick(R.id.checkBox, position);
+                mClickCallBack.onNotifyItemClick(R.id.checkBox, position);
+                break;
+
+            case R.id.expandBtn:
+                mClickCallBack.onNotifyItemClick(R.id.expandBtn, position);
                 break;
         }
     }
-
 
     private void toggleCheckBtn() {
         boolean wasSelected = mCheckBox.isSelected();
