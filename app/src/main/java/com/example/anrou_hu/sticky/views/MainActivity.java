@@ -1,12 +1,16 @@
 package com.example.anrou_hu.sticky.views;
 
+import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.anrou_hu.sticky.MainContract;
@@ -15,7 +19,7 @@ import com.example.anrou_hu.sticky.model.data.Sticky;
 import com.example.anrou_hu.sticky.presenters.MainActivityPresenter;
 import com.example.anrou_hu.sticky.utils.Preconditions;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View, IClickCallBack {
+public class MainActivity extends AppCompatActivity implements MainContract.View, PopupMenu.OnMenuItemClickListener, IClickCallBack {
 
     private MainContract.Presenter mPresenter;
     private MainAdapter mAdapter;
@@ -38,14 +42,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     private void initViews() {
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        mAdapter = new MainAdapter(mPresenter, this);
-        initRecyclerView();
-
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setupRecyclerView();
+        setupToolBar();
     }
 
-    private void initRecyclerView() {
+    private void setupRecyclerView() {
+        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mAdapter = new MainAdapter(mPresenter, this);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
@@ -55,15 +58,67 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
 
-    @Override
-    public void setPresenter(MainContract.Presenter presenter) {
-        mPresenter = Preconditions.checkNotNull(presenter);
+    private void setupToolBar() {
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
     }
 
+
     @Override
-    protected void onResume() {
-        super.onResume();
-        mPresenter.start();
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_add:
+                showAddPopUpMenu();
+                break;
+
+            case R.id.menu_filter:
+                break;
+        }
+        return false;
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+
+    private void showAddPopUpMenu() {
+        PopupMenu popup = new PopupMenu(this, findViewById(R.id.menu_add));
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.add_sticky_menu, popup.getMenu());
+
+        popup.setOnMenuItemClickListener(this);
+        popup.show();
+    }
+
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_add_note:
+                startAddNote();
+                break;
+
+            case R.id.menu_add_to_do:
+                startAddToDoList();
+                break;
+        }
+        return true;
+    }
+
+
+
+    private void startAddNote() {
+        Toast.makeText(this, "Click add note", Toast.LENGTH_SHORT).show();
+    }
+
+
+    private void startAddToDoList() {
+        Toast.makeText(this, "Click add to-do list", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -84,5 +139,17 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 Toast.makeText(this, "Click expandBtn", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+
+    @Override
+    public void setPresenter(MainContract.Presenter presenter) {
+        mPresenter = Preconditions.checkNotNull(presenter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.start();
     }
 }
