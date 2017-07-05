@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
-
     <item
-        android:id="@+id/menu_add_note"
-        app:showAsAction="withText"
-        android:title="@string/add_note"/>
-
-    <item
-        android:id="@+id/menu_add_to_do"
-        app:showAsAction="withText"
-        android:title="@string/add_to_do"/>
+        android:id="@+id/menu_complete"
+        android:icon="@drawable/ic_complete"
+        android:title="@string/complete"
+        app:showAsAction="always"/>
 </menu>
