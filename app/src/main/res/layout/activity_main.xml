@@ -8,9 +8,7 @@
     tools:context="com.example.anrou_hu.sticky.views.MainActivity">
 
     <include
-        layout="@layout/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        layout="@layout/toolbar"/>
 
 
     <android.support.v7.widget.RecyclerView

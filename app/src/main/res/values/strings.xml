@@ -7,4 +7,14 @@
     <string name="add_note">add a note</string>
     <string name="add_to_do">add a to-do list</string>
     <string name="filter">filter</string>
+    <string name="complete">complete</string>
+
+
+    //add sticky
+    <string name="hint_title">Title</string>
+    <string name="hint_description">Enter your description here</string>
+    <string name="hint_add_item">Add an item…</string>
+    <string name="new_to_do">New To-Do</string>
+    <string name="new_note">New Note</string>
+
 </resources>

@@ -8,5 +8,6 @@
     <dimen name="triple_dimens">15dp</dimen>
     <dimen name="quad_dimens">20dp</dimen>
 
+    <dimen name="default_description_height">300dp</dimen>
 
 </resources>
