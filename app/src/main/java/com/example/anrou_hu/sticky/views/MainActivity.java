@@ -65,6 +65,14 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_add:
@@ -74,14 +82,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             case R.id.menu_filter:
                 break;
         }
-        return false;
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private void showAddPopUpMenu() {
         PopupMenu popup = new PopupMenu(this, findViewById(R.id.menu_add));
         MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.add_sticky_menu, popup.getMenu());
+        inflater.inflate(R.menu.add_menu, popup.getMenu());
 
         popup.setOnMenuItemClickListener(this);
         popup.show();
@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
 
-
     private void startAddNote() {
+        AddNoteActivity.startForResult(this);
         Toast.makeText(this, "Click add note", Toast.LENGTH_SHORT).show();
     }
 
