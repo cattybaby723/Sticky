@@ -1,5 +1,6 @@
 package com.example.anrou_hu.sticky.views;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +16,13 @@ import android.widget.Toast;
 
 import com.example.anrou_hu.sticky.MainContract;
 import com.example.anrou_hu.sticky.R;
+import com.example.anrou_hu.sticky.model.data.Note;
 import com.example.anrou_hu.sticky.model.data.Sticky;
+import com.example.anrou_hu.sticky.model.data.ToDo;
 import com.example.anrou_hu.sticky.presenters.MainActivityPresenter;
+import com.example.anrou_hu.sticky.utils.Constants;
 import com.example.anrou_hu.sticky.utils.Preconditions;
+import com.example.anrou_hu.sticky.utils.RequestCode;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View, PopupMenu.OnMenuItemClickListener, IClickCallBack {
 
@@ -50,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mAdapter = new MainAdapter(mPresenter, this);
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.divider));
@@ -151,5 +156,45 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onResume() {
         super.onResume();
         mPresenter.start();
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == RequestCode.ADD_NOTE && resultCode == RESULT_OK) {
+            addNoteFromResult(data);
+        }
+
+        if (requestCode == RequestCode.ADD_TO_DO && resultCode == RESULT_OK) {
+            addToDoFromResult(data);
+        }
+    }
+
+
+    private void addNoteFromResult(Intent data) {
+        if (data == null) return;
+
+        Bundle bundle = data.getExtras();
+        if (bundle == null) return;
+
+        Note note = (Note) bundle.getSerializable(Constants.KEY_NOTE);
+        mPresenter.addSticky(note);
+    }
+
+
+    private void addToDoFromResult(Intent data) {
+        if (data == null) return;
+
+        Bundle bundle = data.getExtras();
+        if (bundle == null) return;
+
+        ToDo toDo = bundle.getParcelable(Constants.KEY_TO_DO);
+        mPresenter.addSticky(toDo);
+    }
+
+
+    @Override
+    public void listIsModified() {
+        mAdapter.notifyDataSetChanged();
     }
 }

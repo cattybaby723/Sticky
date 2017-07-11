@@ -15,7 +15,9 @@ import android.widget.EditText;
 
 import com.example.anrou_hu.sticky.AddNoteContract;
 import com.example.anrou_hu.sticky.R;
+import com.example.anrou_hu.sticky.model.data.Note;
 import com.example.anrou_hu.sticky.presenters.AddNotePresenter;
+import com.example.anrou_hu.sticky.utils.Constants;
 import com.example.anrou_hu.sticky.utils.Preconditions;
 import com.example.anrou_hu.sticky.utils.RequestCode;
 
@@ -73,12 +75,48 @@ public class AddNoteActivity extends AppCompatActivity implements AddNoteContrac
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_complete:
+                buildNote();
+                finish();
+                break;
 
+            case R.id.home:
+                finish();
                 break;
         }
-
         return true;
     }
+
+    private void buildNote() {
+        String title = mTitle.getText().toString();
+        String description = mDescription.getText().toString();
+        long currentTime = System.currentTimeMillis();
+
+        if (title.isEmpty() && description.isEmpty()) return;
+
+        Note note = new Note();
+        note.setTitle(title);
+        note.setDescription(description);
+        note.setTime(currentTime);
+
+        buildResult(note);
+        writeIntoDb(note);
+    }
+
+
+    private void buildResult(Note note) {
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(Constants.KEY_NOTE, note);
+        intent.putExtras(bundle);
+
+        setResult(Activity.RESULT_OK, intent);
+    }
+
+
+    private void writeIntoDb(Note note) {
+        mPresenter.writeIntoDb(note);
+    }
+
 
     @Override
     public void setPresenter(AddNoteContract.Presenter presenter) {

@@ -1,13 +1,17 @@
 package com.example.anrou_hu.sticky.model.data;
 
+import android.os.Parcelable;
+
 import com.example.anrou_hu.sticky.model.data_type.StickyStatus;
 import com.example.anrou_hu.sticky.model.data_type.StickyType;
+
+import java.io.Serializable;
 
 /**
  * @author anrou_hu
  */
 
-public abstract class Sticky {
+public abstract class Sticky implements Serializable {
 
     private StickyType mType;
     private StickyStatus mStatus;

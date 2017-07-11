@@ -10,7 +10,7 @@ import com.example.anrou_hu.sticky.model.data_type.StickyType;
 
 public class Note extends Sticky {
 
-    private String mContent;
+    private String mDescription;
 
     public Note() {
         this.setType(StickyType.NOTE);
@@ -18,11 +18,11 @@ public class Note extends Sticky {
     }
 
 
-    public String getContent() {
-        return mContent;
+    public String getDescription() {
+        return mDescription;
     }
 
-    public void setContent(String content) {
-        mContent = content;
+    public void setDescription(String content) {
+        mDescription = content;
     }
 }
