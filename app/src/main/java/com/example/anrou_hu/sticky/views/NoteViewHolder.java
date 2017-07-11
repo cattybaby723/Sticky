@@ -40,7 +40,8 @@ public class NoteViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     }
 
     public void bindViews(Note note) {
-        mTitle.setText(note.getTitle());
+        String title = note.getTitle().isEmpty() ? note.getDescription() : note.getTitle();
+        mTitle.setText(title);
     }
 
     @Override
