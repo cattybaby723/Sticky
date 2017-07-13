@@ -79,7 +79,7 @@ public class AddNoteActivity extends AppCompatActivity implements AddNoteContrac
                 finish();
                 break;
 
-            case R.id.home:
+            case android.R.id.home:
                 finish();
                 break;
         }
