@@ -28,14 +28,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/default_dimens"/>
 
-        <ImageButton
-            android:layout_width="@dimen/default_icon_size"
-            android:layout_height="@dimen/default_icon_size"
-            android:layout_marginStart="@dimen/default_icon_size"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_add_to_do"
-            />
-
     </LinearLayout>
 
 

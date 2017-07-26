@@ -14,7 +14,10 @@
     <string name="hint_title">Title</string>
     <string name="hint_description">Enter your description here</string>
     <string name="hint_add_item">Add an item…</string>
-    <string name="new_to_do">New To-Do</string>
+    <string name="new_to_do">New To-Dos</string>
     <string name="new_note">New Note</string>
+    <string name="note_empty_error_hint">Note can not be empty</string>
+    <string name="to_do_empty_error_hint">To-Dos can not be empty</string>
+
 
 </resources>

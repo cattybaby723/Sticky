@@ -75,7 +75,7 @@ public class AddNoteActivity extends AppCompatActivity implements AddNoteContrac
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_complete:
-                buildNote();
+                buildNoteIfValid();
                 finish();
                 break;
 
@@ -86,7 +86,8 @@ public class AddNoteActivity extends AppCompatActivity implements AddNoteContrac
         return true;
     }
 
-    private void buildNote() {
+
+    private void buildNoteIfValid() {
         String title = mTitle.getText().toString();
         String description = mDescription.getText().toString();
         long currentTime = System.currentTimeMillis();
