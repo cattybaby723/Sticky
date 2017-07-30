@@ -27,11 +27,11 @@ public class NoteViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         super(itemView);
 
         mIClickCallBack = iClickCallBack;
-        initView(itemView);
+        initView();
     }
 
 
-    private void initView(View itemView) {
+    private void initView() {
         mContainer = (ViewGroup) itemView.findViewById(R.id.container);
         mCheckBox = (ImageButton) itemView.findViewById(R.id.checkbox);
         mTitle = (TextView) itemView.findViewById(R.id.title);

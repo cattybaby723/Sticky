@@ -28,10 +28,10 @@ public class ToDoViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         super(itemView);
 
         mClickCallBack = clickCallBack;
-        initViews(itemView);
+        initViews();
     }
 
-    private void initViews(View itemView) {
+    private void initViews() {
         mContainer = (ViewGroup) itemView.findViewById(R.id.container);
         mCheckBox = (ImageButton) itemView.findViewById(R.id.checkBox);
         mExpandBtn = (ImageButton) itemView.findViewById(R.id.expandBtn);

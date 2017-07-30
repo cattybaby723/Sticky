@@ -8,7 +8,7 @@
     android:orientation="vertical">
 
 
-    <Image
+    <ImageView
         android:id="@+id/bulletPoint"
         android:layout_width="@dimen/default_icon_size"
         android:layout_height="@dimen/default_icon_size"
