@@ -2,7 +2,7 @@ package com.example.anrou_hu.sticky.presenters;
 
 import android.support.annotation.NonNull;
 
-import com.example.anrou_hu.sticky.MainContract;
+import com.example.anrou_hu.sticky.contract.MainContract;
 import com.example.anrou_hu.sticky.model.data.Sticky;
 import com.example.anrou_hu.sticky.utils.Preconditions;
 

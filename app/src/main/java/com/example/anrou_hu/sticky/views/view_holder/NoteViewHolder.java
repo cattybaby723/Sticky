@@ -1,4 +1,4 @@
-package com.example.anrou_hu.sticky.views;
+package com.example.anrou_hu.sticky.views.view_holder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.example.anrou_hu.sticky.R;
 import com.example.anrou_hu.sticky.model.data.Note;
+import com.example.anrou_hu.sticky.views.IClickCallBack;
 
 /**
  * @author anrou_hu

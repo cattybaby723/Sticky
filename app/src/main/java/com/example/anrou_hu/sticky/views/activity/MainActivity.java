@@ -1,4 +1,4 @@
-package com.example.anrou_hu.sticky.views;
+package com.example.anrou_hu.sticky.views.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.anrou_hu.sticky.MainContract;
+import com.example.anrou_hu.sticky.contract.MainContract;
 import com.example.anrou_hu.sticky.R;
 import com.example.anrou_hu.sticky.model.data.Note;
 import com.example.anrou_hu.sticky.model.data.Sticky;
@@ -23,6 +23,10 @@ import com.example.anrou_hu.sticky.presenters.MainActivityPresenter;
 import com.example.anrou_hu.sticky.utils.Constants;
 import com.example.anrou_hu.sticky.utils.Preconditions;
 import com.example.anrou_hu.sticky.utils.RequestCode;
+import com.example.anrou_hu.sticky.views.IClickCallBack;
+import com.example.anrou_hu.sticky.views.activity.AddNoteActivity;
+import com.example.anrou_hu.sticky.views.activity.AddToDoActivity;
+import com.example.anrou_hu.sticky.views.adapter.MainAdapter;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View, PopupMenu.OnMenuItemClickListener, IClickCallBack {
 
@@ -123,6 +127,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
 
     private void startAddToDoList() {
+        AddToDoActivity.startForResult(this);
         Toast.makeText(this, "Click add to-do list", Toast.LENGTH_SHORT).show();
     }
 

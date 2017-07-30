@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.anrou_hu.sticky;
+package com.example.anrou_hu.sticky.contract;
 
 
 import com.example.anrou_hu.sticky.presenters.BasePresenter;

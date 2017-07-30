@@ -1,16 +1,19 @@
-package com.example.anrou_hu.sticky.views;
+package com.example.anrou_hu.sticky.views.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.anrou_hu.sticky.MainContract;
+import com.example.anrou_hu.sticky.contract.MainContract;
 import com.example.anrou_hu.sticky.R;
 import com.example.anrou_hu.sticky.model.data.Note;
 import com.example.anrou_hu.sticky.model.data.Sticky;
 import com.example.anrou_hu.sticky.model.data.ToDo;
 import com.example.anrou_hu.sticky.model.data_type.StickyType;
+import com.example.anrou_hu.sticky.views.IClickCallBack;
+import com.example.anrou_hu.sticky.views.view_holder.NoteViewHolder;
+import com.example.anrou_hu.sticky.views.view_holder.ToDoViewHolder;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

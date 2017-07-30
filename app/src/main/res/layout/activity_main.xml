@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.anrou_hu.sticky.views.MainActivity">
+    tools:context="com.example.anrou_hu.sticky.views.activity.MainActivity">
 
     <include
         layout="@layout/toolbar"/>

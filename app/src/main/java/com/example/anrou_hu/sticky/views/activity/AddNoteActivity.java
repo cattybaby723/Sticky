@@ -1,4 +1,4 @@
-package com.example.anrou_hu.sticky.views;
+package com.example.anrou_hu.sticky.views.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-import com.example.anrou_hu.sticky.AddNoteContract;
+import com.example.anrou_hu.sticky.contract.AddNoteContract;
 import com.example.anrou_hu.sticky.R;
 import com.example.anrou_hu.sticky.model.data.Note;
 import com.example.anrou_hu.sticky.presenters.AddNotePresenter;

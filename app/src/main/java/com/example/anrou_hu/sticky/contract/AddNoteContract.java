@@ -1,4 +1,4 @@
-package com.example.anrou_hu.sticky;
+package com.example.anrou_hu.sticky.contract;
 
 import com.example.anrou_hu.sticky.model.data.Note;
 import com.example.anrou_hu.sticky.presenters.BasePresenter;

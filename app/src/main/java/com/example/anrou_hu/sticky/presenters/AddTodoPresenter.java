@@ -1,6 +1,6 @@
 package com.example.anrou_hu.sticky.presenters;
 
-import com.example.anrou_hu.sticky.AddToDoContract;
+import com.example.anrou_hu.sticky.contract.AddToDoContract;
 import com.example.anrou_hu.sticky.model.data.ToDo;
 
 /**

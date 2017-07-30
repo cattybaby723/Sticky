@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-        <activity android:name=".views.MainActivity"
+        <activity android:name=".views.activity.MainActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTask">
             <intent-filter>
@@ -18,21 +18,21 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".views.AddToDoActivity"
+        <activity android:name=".views.activity.AddToDoActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".views.MainActivity">
+            android:parentActivityName=".views.activity.MainActivity">
 
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                       android:value=".views.MainActivity"/>
+                       android:value=".views.activity.MainActivity"/>
         </activity>
 
         <activity
-            android:name=".views.AddNoteActivity"
+            android:name=".views.activity.AddNoteActivity"
             android:screenOrientation="portrait"
-            android:parentActivityName=".views.MainActivity">
+            android:parentActivityName=".views.activity.MainActivity">
 
             <meta-data android:name="android.support.PARENT_ACTIVITY"
-                       android:value=".views.MainActivity"/>
+                       android:value=".views.activity.MainActivity"/>
         </activity>
     </application>
 
