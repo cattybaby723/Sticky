@@ -5,11 +5,23 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#FFFFFF</color>
+    <color name="light_gray">#ACACAC</color>
     <color name="gray">#6C6C6C</color>
 
+
+    <!-- basic -->
+    <color name="toolbar_bg">@color/gray</color>
     <color name="dividerLine">#BBBBBB</color>
     <color name="touchEffectGray">#55999999</color>
+    <color name="hint_text">@color/light_gray</color>
 
 
+    <!-- checkbox -->
+    <color name="unchecked_check_box">@color/gray</color>
+    <color name="checked_check_box">@color/light_gray</color>
+
+
+
+    <!-- sticky -->
     <color name="defaultNote">#FFFFAA</color>
 </resources>
